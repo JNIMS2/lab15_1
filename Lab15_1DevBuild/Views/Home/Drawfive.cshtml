@@ -1,0 +1,26 @@
+﻿@model DeckDraw
+@*i think the above is the right model for this
+    i may need to make another class that also has cards?
+    for some reason this view accepts my root model but not my deckdraw
+    model*@
+@{
+    ViewData["Title"] = "Drawfive";
+}
+
+<h1>Draw five</h1>
+
+<div>DeckID: @Model.deck_id</div>
+<div>Remaining cards in deck: @Model.remaining</div>
+<div></div>
+<div id="MainDiv">
+    @foreach (Card card in Model.cards)
+    {
+        <div>@card.code @card.suit @card.value</div>
+        @*<div class="card" style="width: 20rem; text-align: center;display:inline-block;"></div>*@
+        <div style="float:left;">
+            <img src="https://deckofcardsapi.com/static/img/@(card.code).png" width="100" />
+        </div>
+    }
+
+</div>
+<a asp-action="Drawfive" asp-controller="Home" class="btn btn-primary">Draw 5</a>

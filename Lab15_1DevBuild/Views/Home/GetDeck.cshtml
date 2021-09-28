@@ -1,0 +1,15 @@
+﻿@model Root
+@{
+    ViewData["Title"] = "GetDeck";
+}
+
+<h1>Deck Info:</h1>
+@*this is my deck info, put in divs or a table*@
+<div>Deck ID: @Model.deck_id</div>
+<div>Remaining Cards: @Model.remaining</div>
+<div>Shuffled: @Model.shuffled</div>
+
+
+
+<a asp-action="Drawfive" asp-controller="Home" class="btn btn-primary">Draw 5</a>
+
