@@ -15,7 +15,7 @@
 <div id="MainDiv">
     @foreach (Card card in Model.cards)
     {
-        <div>@card.code @card.suit @card.value</div>
+        <div style="float:left">@card.code @card.suit @card.value</div>
         @*<div class="card" style="width: 20rem; text-align: center;display:inline-block;"></div>*@
         <div style="float:left;">
             <img src="https://deckofcardsapi.com/static/img/@(card.code).png" width="100" />
